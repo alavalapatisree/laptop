@@ -1,0 +1,499 @@
+quiz 1 --- points
+
+1) What are the core components that make up a Virtual Machine?
+
+Storage(Disks)
+OS
+Processer and RAM
+Network Card
+
+
+
+2) Which Azure product is responsible for providing data storage for your Virtual Machines, Web Applications, and any database applications in your cloud environment?
+
+Azure Storage Accounts are the base organizational containers for storing all data in your Azure account.
+
+3) Which feature is a major differentiator between Azure and AWS?
+
+Azure Active Directory
+
+4) Which Azure products below can you use to launch a web application?
+
+You can launch a web app or website using the Web App service, an Azure VM (Linux or Windows), or via the Azure Container Service.
+
+
+5) ____ is the ability to quickly expand or decrease resources (such as computer processing, memory, and storage) without having to be concerned about capacity planning and engineering for peak usage.
+
+Elasticity
+
+6) What are the two main types of scaling in Cloud Computing?
+
+Vertical Scaling is scaling the size of the instances (cpu, mem, etc) up to meet demand.
+
+Horizontal Scaling is scaling the number of same size instances up to meet demand. This type of scaling is preferred.
+
+7) A system that can suffer the failure of a component and continue to function is called?
+
+Fault Tolerance
+
+8) Complete this statement: "Cloud computing is the delivery of computing services. Typically, you only pay for cloud services you use, helping you lower your operating costs, run your ___ more efficiently and scale as your business needs change."
+
+Infrastructure
+
+cloud computing is the delivery of computing services – including servers, storage, databases, networking, software, analytics and intelligence – over the Internet (“the cloud”) to offer faster innovation, flexible resources and economies of scale. Typically, you only pay for cloud services you use, helping you lower your operating costs, run your infrastructure more efficiently and scale as your business needs change. 
+
+9) What are Azure's four levels of scope for applying management settings. Select the four available scope levels.
+
+Management Groups
+Subscriptions
+Resource Groups
+Resource
+
+10) Which of the following are reasons for a company to choose cloud services? 
+
+Ease of Scaling Out `
+Owning your own hardware
+Low cost of entry `
+Ease of Scaling Up `
+
+Cloud services offer a low cost of entry and ease of scaling, both up and out.
+
+11) Which of the following companies have cloud products that offer similar products and services to Azure?
+
+Salesforce Heroku 
+Rackspace Openstack `
+Google Cloud Platform `
+Amazon Web Services `
+
+Google Cloud Platform, Rackspace Openstack, and Amazon Web Service both offer products that are comparable in feature set, price and architecture to Azure.
+
+12) What are the primary reasons companies use Cloud Services?
+
+Scalability and Elasticity
+Disaster Recovery
+Fault Tolerance and High Availability
+
+
+13) QUESTION 11
+
+Which of the following are ways to organize your account and resources in Azure? (Choose all that apply)
+
+Resource Groups `
+Departments
+Subscriptions `
+Geographic Region `
+
+You can organize your Azure resources using Subscriptions, Regions, and Resource Groups.
+
+14) Which Azure product is responsible for providing data storage for your Virtual Machines, Web Applications, and any database applications in your cloud environment?
+
+Azure Storage Accounts `
+Azure Data Lake
+Azure SQL Database
+Azure Subscriptions
+
+15) Which Azure product can you use to connect social identity providers (Facebook, Google, Twitter, etc.) to a web application running in Azure?
+
+
+Azure Active Directory `
+Network Peering
+Site-to-Site VPN
+Web App Service Plan
+
+Azure Active Directory (B2C) allows you to use social identity providers to authenticate your users.
+
+16) A system that is designed to be accessible as much of the time as possible, is called what?
+
+High Available
+A highly available system is designed to accessible as much of the time as possible
+
+
+17) Which service in Azure acts as a store of user credentials?
+
+Azure Active Directory
+
+18) If you are recreating your on-premises data center environment with Azure, which product will provide your networking stack?
+
+Azure Virtual Networks
+
+Azure Virtual Networks provide the networking backbone for your cloud environment.
+
+19) In an Azure Storage Account, what are the four types of storage? 
+
+Queues `
+Tables `
+Images
+Blobs `
+Files `
+
+20) Which Azure product is responsible for providing general purpose computing power in your cloud environment?
+
+Azure Machine Learning
+Azure Virtual Machines `
+Azure Virtual Networks
+Azure Storage
+
+Azure VMs are responsible for providing your computing power for your workloads.
+
+
+
+
+
+```````````
+
+21 ) What is a PowerShell cmdlet?
+
+A lightweight version of PowerShell that can run on mobile devices
+
+A PowerShell scripting language specifically for Azure
+
+A piece of advice from Microsoft about PowerShell updates
+
+A lightweight command that is used in the PowerShell environment to perform an action `
+
+22) What is a good reason to use the Azure CLI?
+
+It rarely changes, and the commands stay the same for the most part. `
+You can use scripts to perform multiple tasks at once. `
+You can use the Azure CLI with more than one cloud provider.
+It makes it cheaper to use Azure, as you don't have to pay for the Azure portal.
+
+
+The Azure CLI is all text-based, so there is no user interface to change. This means the commands and procedures stay very static in the tool. You can use all products and services with the CLI.
+
+The Azure CLI allows you to write scripts that automatically execute multiple actions in Azure.
+
+23) What are three use cases for the Azure mobile app?
+
+Respond to outages and emergencies from anywhere you have an internet connection. `
+Interact with your Azure resources via Azure Resource Manager. `
+It is a replacement for using the Azure portal for everyday tasks, such as creating resources and analyzing Azure Monitor logs.
+Maintain insight on the go into the current status and health of your Azure environment. `
+
+- The main purpose of the Azure mobile app is to monitor the state of your Azure resources.
+- Alerts are instantly visible, and you can investigate all your resources as well.
+- All of your resources and subscriptions are visible on the mobile app.
+- You can even manage resources in the CloudShell too. The Azure mobile app uses the Azure Resource Manager to interact with your Azure resources, which means it is in sync with the Azure CLI, Azure portal, or whatever else you use to interact with Azure.
+- The Azure mobile app provides a quick overview of your resources.
+
+24) Why would you use the Azure Cloud Shell?
+
+
+Cloud Shell enables access to a browser-based command-line experience built with Azure management tasks in mind. `
+
+You can update the Cloud Shell independently of Azure CLI and Azure PowerShell.
+
+The Cloud Shell gets new features first.
+
+The Cloud Shell is free for 12 months.
+
+
+- Cloud Shell is 100% browser based and provides a complete environment where you can choose between Bash or PowerShell.
+
+
+````````````````````
+
+25) What does Infrastructure as a Service describe?
+
+Infrastructure as a service (IaaS) is a type of cloud computing service that offers essential compute, storage, and networking resources on demand, on a pay-as-you-go basis. IaaS lets you bypass the cost and complexity of buying and managing physical servers and datacenter infrastructure. Each resource is offered as a separate service component, and you only pay for a particular resource for as long as you need it. 
+
+26) Select all the true statements per Microsoft's definitions of cloud types.
+
+Private clouds can be hosted at your datacenter or hosted by a third-party service. Private clouds offer advantages of flexibility, control, and scalability. `
+
+In private clouds, services and infrastructure are always maintained on a private network, and the hardware and software are dedicated solely to your organization.`
+
+A hybrid cloud combines a public cloud (such as Azure) with on-premises infrastructure (private cloud).`
+
+Public clouds typically cost more than private clouds, but they are generally less reliable than on-premises infrastructure (private cloud).
+
+
+26) What is high availability in cloud computing?
+
+
+Azure will provide an infinite number of resources to your application to make sure it always runs optimally.
+
+High availability refers to the availability of the Azure portal. You can always get access to an overview of what your Azure services are doing.
+
+Microsoft guarantees you will always have access to the resources on Azure.
+
+If one resource on Azure dies unexpectedly, another resource will almost instantly take over the workload. `
+
+
+27) What is "serverless" computing?
+
+
+A complete development and deployment environment in the cloud
+
+A theory for making computing completely cloud-based for certain scenarios
+
+A way for developers to build applications faster by eliminating the need for them to manage infrastructure `
+
+An application that is running on the cloud platform without the use of servers
+
+28) What is the difference between OpEx and CapEx?
+
+
+OpEx is costs for acquiring assets. CapEx is an ongoing cost for running a business.
+
+OpEx is better return on investment in the short term. CapEx is better return on investment in the long term.
+
+OpEx is a cost on services you don't own, such as cloud computing. CapEx is a cost of ownership.
+
+OpEx is an ongoing cost for running a business. CapEx is the cost of acquiring and maintaining assets. `
+
+
+Knowing the difference between OpEx and CapEx is critical to get the best value out of Azure for your company. Capital expenditures (CapEx) generally result in the acquisition and maintenance of assets, such as server hardware. Operating expenditures (OpEx) are the ongoing costs of running a business, such as paying for cloud services on a recurring basis. By moving costs to OpEx, businesses can plan for ongoing costs rather than large investments.
+
+29) Which cloud ability does predictability describe?
+
+
+The ability to create standardized environments for regulatory requirements
+
+The ability to recover from an unexpected disaster
+
+The expectation that your application will perform as expected regardless of traffic `
+
+Full visibility into current and future costs `
+
+
+One aspect of predictability is knowing that your application will consistently perform as expected even if user load increases. This is accomplished with cloud computing features such as load balancing, high availability, and autoscaling.
+
+Predictability includes transparent cost usage, including accurate forecasts on future costs based on current usage.
+
+
+30)what's the best definition for scalability on Azure?
+
+
+Scalability is the ability to quickly and automatically expand or decrease computer processing, memory, and storage resources to meet changing demands without worrying about capacity planning and engineering for peak usage. (my notes: this is elasticity property)
+
+If an account has more than one Azure region active, resources can be copied between these regions.
+
+Scaling of resources on Azure is currently not possible.
+
+Scalability is the ability to quickly and easily increase or decrease the size or power of an IT solution or resource to handle changing load. `
+
+
+31) Why is cloud governance important for businesses?
+
+
+To ensure your application is resilient in case of disaster
+
+To enable creation of standardized environments and audit those environments for compliance `
+
+To be able to quickly scale resources when needed at short notice
+
+To increase the return on investment from using cloud elasticity
+
+
+Governance is all about standardization and compliance, which is especially useful for meeting corporate standards and/or meeting government regulations.
+
+32) What is a benefit of a hybrid cloud approach?
+
+
+It enables companies to use a mix of private and public cloud components. `
+
+Using alternative energy sources for powering some services can create tax benefits in some regions.
+
+It requires no changes to existing code or applications, allowing companies to scale their infrastructure into the cloud.
+
+All maintenance is handled by Microsoft Azure, so it reduces support costs.
+
+33) What does reliability describe for cloud computing?
+
+
+Ensuring services and applications remain available in the event of a failure `
+
+A managed service within Azure that uses cloud computing resources to quickly mitigate faults
+
+The ability for an Azure service to automatically add additional resources as needed
+
+Knowing that your application will always perform as expected regardless of user load
+
+34)  What is consumption-based pricing on Azure?
+
+
+Some core services on Azure are consumed constantly to keep your applications running. You pay for this consumption.
+
+Consumption-based pricing is when you are charged for only what you use (pay-as-you-go rate). `
+
+Consumption-based pricing is the model for paying for any services on a free Azure account.
+
+Any service you use on Azure has a consumption component as part of the pricing.
+
+
+
+
+``````````````````
+
+35) What is an availability zone?
+
+
+One or more datacenters (with shared power and cooling) that are close together to provide backup for each other
+
+A collection of software that can enable high scalability at short notice
+
+A unique physical location within a region that is made up of one or more datacenters equipped with independent power, cooling, and networking `
+
+A set of datacenters close together
+
+
+36) What is an Azure region?
+
+
+A geographical part of the Azure platform
+
+A set of datacenters, deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network `
+
+One or more datacenters equipped with independent power, cooling, and networking
+
+A collection of similar services that can be hosted in an Azure data center
+
+37) Select all the true statements regarding Azure Resource Manager.
+
+
+If a user sends a request from any Azure tools, APIs, or SDKs, Azure Resource Manager handles the request. `
+
+Azure Resource Manager is the deployment and management service for Azure. `
+
+Azure Resource Manager templates (ARM templates) always deploy resources in the same consistent state. `
+
+Azure Resource Manager enables the managing of your infrastructure through scripts rather than declarative templates.
+
+
+
+38) When can you delete a resource group from Azure?
+
+
+When an account is deactivated
+
+At any time, as long as your resources or resource group are not locked by a related service `
+
+When all the resources in the resource group have stopped
+
+Only when the resource group is empty
+
+
+
+
+
+
+
+``````````````````
+
+
+39) What are some benefits of using a Virtual Machine on Azure, compared to using your own on-site physical server?
+
+
+Owning the hardware but Azure maintains it
+
+Applications have much better performance running on comparable virtual machines.
+
+No maintenance of hardware and only paying for what you use `
+
+Always much cheaper than running your own servers
+
+
+40) What is a fully managed platform on Azure?
+
+
+Every part of your Azure services are looked after by Microsoft. This means you don't have to worry about your application development.
+
+You can pay a monthly fee to have Microsoft look after the maintenance of your applications and services on Azure.
+
+Servers, network, storage, and more are all managed by Azure. You focus on your business value and logic. `
+
+A fully managed platform on Azure is a specific subscription that provides extra support for your Azure services.
+
+
+41) Which cloud service model do virtual machines belong to?
+
+
+Platform as a Service
+
+Infrastructure as a Service `
+
+Serverless.
+
+Software as a Service
+
+
+42) What are the three kinds of App Service?
+
+Choose 3
+
+
+API Apps `
+
+Web Apps `
+
+Web App for Containers `
+ 
+Event Grid for App Services
+
+Azure Standard Apps
+
+Web App for Linux
+
+43) Your company suddenly has a bunch of new remote employees, who all need a Windows environment to work from. Which is the best Azure solution to get them up and running quickly?
+
+
+Azure Kubernetes Service (AKS)
+
+Preconfigured laptop devices that connect directly to Azure VMs
+
+Virtual machine with Windows 10
+
+Azure Virtual Desktop (formerly Windows Virtual Desktop) `
+
+
+44) Which definition best describes compute on Microsoft Azure?
+
+
+Any service that performs or enables a computation `
+
+An optional component to improve the efficiency of Azure
+
+Any serverless service, such as Azure Functions
+
+A virtual machine
+
+Compute is one of three foundational components of cloud computing. The other two are network and storage. This means any service that performs a compute function on Azure is part of "Compute" on Azure. It isn't a single service.
+
+
+45) What is a scale set?
+
+
+A set of similar services that all work together for a service or application
+
+A set of virtual machines running in the same data center
+
+A range of sizes of virtual machines ready to take over a workload
+
+A set of individual virtual machines that can be configured and managed as a single group `
+
+
+Scale sets are a feature specific to virtual machines. While you may run a service or application that uses more than just virtual machines, the scale sets will only work for the virtual machine elements.
+
+Correct Answer
+Azure virtual machine scale sets let you create and manage a group of load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule. Scale sets provide high availability to your applications and allow you to centrally manage, configure, and update a large number of VMs. With virtual machine scale sets, you can build large-scale services for areas such as compute, big data, and container workloads
+
+46) What is an Azure Function?
+
+Choose 2
+
+
+The smallest compute service on Azure that represents a single function of compute `
+
+A foundational component of any Azure infrastructure
+
+An add-on to any paid Azure subscription that allows using Azure services as functions in your applications
+
+A function to update any resources on Azure
+
+A serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. `
+
+
+
+Azure Functions are the smallest compute services on Azure that represent a single function of compute. Functions can be called or invoked via standard web address (URL).
+Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. Instead of worrying about deploying and maintaining servers, the cloud infrastructure provides all the up-to-date resources needed to keep your applications running. Reference:

@@ -1,0 +1,519 @@
+Portal features
+--------------->
+
+personalize - create your own dashboards, layouts, workflows and colours
+
+Access control - only one login to access all resources
+
+Cost management - tools are there to track all resource costs
+
+One stop shop - only one login to access all resources
+
+Constantly updated - continuosly updated , that will help us to be on fast forwarding way
+
+Multi-platform - we can use this in any device (lap, mobile...)
+
+
+Azure CLI (Bash)
+----------->>
+
+The Azure Command-Line Interface (CLI) is a cross-platform tool for managing and administering Microsoft Azure. It allows you to use the terminal to query, create, and administer cloud resources. 
+
+Powershell
+------------->>
+
+Azure PowerShell is designed for managing and administering Azure resources from the command line.
+
+Cloud CLI
+---------->>
+
+Cloud Shell is 100% browser based and provides a complete environment where you can choose between Bash or PowerShell.
+
+Access :
+. Access from anywhere using web or mobile app
+
+Shell :
+. Choose between Bash(Azure CLI) or PowerShell
+
+Tools :
+.Included tools:
+	interpreters, modules, Azure tools
+.Language support for Node.js, .NET and python
+
+Storage:
+. Dedicated storage to persist data between sessions
+
+File Editor:
+. A complete file editor
+
+
+
+
+CLI Commands::::
+
+1 ) az group list
+	The az group list command lists the Azure resource groups in your subscription. Generally it will give you in json format. If you want to see in more proper way use (az group list --output table)
+
+2 ) az storage account list
+	The az storage account list subcommand lists all storage accounts in an Azure subscription or a specific resource group
+
+3 ) az vm list
+	The az vm list command lists the details of available virtual machines.
+
+4 ) az vm create 
+	 to create vm 
+az vm create `
+>> --name Lab `                     
+>> --resource-group 72-86df2c57-accessing-and-using-the-azure-cloud-sh `
+>> --image UbuntuLTS `
+>> --admin-username azureuser `
+>> --generate-ssh-keys
+
+
+
+Powershell Commands::::
+
+1 ) Get-AzResourceGroup
+2 ) Get-AzStorageAccount
+3 ) Get-AzVM
+4 ) Get-AzResource | ft	
+5 ) Remove-AzVM -Name aaa -ResourceGroupName 72-86df2c57-accessing-and-using-the-azure-cloud-sh
+6 ) Get-AzResourceGroup -Name 72-86df2c57-accessing-and-using-the-azure-cloud-sh
+
+Azure mobile app
+------------------>>
+
+- Respond to outages and emergencies from anywhere you have an internet connection. 
+- Interact with your Azure resources via Azure Resource Manager. 
+
+- Maintain insight on the go into the current status and health of your Azure environment. 
+
+- The main purpose of the Azure mobile app is to monitor the state of your Azure resources.
+- Alerts are instantly visible, and you can investigate all your resources as well.
+- All of your resources and subscriptions are visible on the mobile app.
+- You can even manage resources in the CloudShell too. The Azure mobile app uses the Azure Resource Manager to interact with your Azure resources, which means it is in sync with the Azure CLI,             Azure portal, or whatever else you use to interact with Azure.
+- The Azure mobile app provides a quick overview of your resources.
+
+
+
+
+ARM templates
+---------------->>
+
+The ARM templates are a way to describe which resource you want to create, delete, manage, alter, or do any number of actions to.
+One of the great advantages of computing in general is the ability to automate and replicate tasks, actions, and processes. ARM templates are that option for Azure.
+
+ARM templates are idempotent (Idempotent means that applying an operation once or applying it multiple times has the exact same effect.)
+
+ARM templates will written in JSON format
+
+Advantages::
+. Idempotent
+. Source control (keep track changes to ARM templates)
+. Reuse ( use combination of multiple partial ARM templates to achieve complex templates)
+. Declarative (you can specify what you want but not how you want... that is azure work)
+. No human errors (humans doesn't have a chance to repeat the errors)
+
+
+Azure Advisor
+---------------->>
+
+The Advisor will provide recommendation to improve availability of resources, save costs on services,,,....
+
+Azure Advisor is a free service from Microsoft Azure that provides recommendations for optimizing your Azure resources.
+
+ex- if you have 10 VMs. In that you are using 2 insufficiently.  so the azure advior will you suggestion like delete 2Vms or decrease the size of VMs
+
+
+. High availability means systems are always available - even automatically
+
+. Reliability describes how azure can tolerate failures or even disasters.
+
+. Scalability refers to scaling out or scaling up while automatically providing resources as needed.
+
+. Predictability is knowing your application will always perform as expected and knowing what it will cost.
+
+. Security is having full control of your cloud security posture.
+
+. Governance is standarding cloud deployments to meet requirements/company standards.
+
+. Manageability is management of cloud resources and how we interact with them.
+
+
+Capital Expenditure:
+
+Money spent by a business or organization on acquiring or maintaining fixed assets, such as land, buildings, and equipment
+
+
+Operational Expenditure:
+
+An ongoing cost for running a product, bussiness, or system on a day-to-day basis, including annual costs, electricity.
+
+ we need to pay 
+. per execution
+. per second
+. combination
+
+
+IaaS
+~~~~
+
+Infrastructure refers to actual servers being virtual ones. you don't have to go out and buy physical servers. You can scale up and down quickly, provisioning more servers as you need them, and only paying for what you use.
+
+
+Virtual machines
+networks physical buildings
+
+PaaS
+~~~~
+It is a super set of IaaS, and like IaaS, PaaS includes infrastructure, service, storage, and networking but also middleware, development tools, business intelligence (or BI), services, database management systems, and more. PaaS is designed to support the complete web application lifecycle: building, testing, deploying, managing, and updating. On Azure, the PaaS offering avoids the expense and complexity of buying and managing software licenses, the underlying application infrastructure, and middleware.
+
+Middleware
+tools
+
+
+SaaS
+~~~~
+It's a term that implicitly includes both IaaS and PaaS, and it is built on top of those. Normally, it has to do with providing a service via a managed rented software service, such as Stripe for credit card payments, Gmail for emails, or QuickBooks for accounting. You don't own the software, but you pay an access fee to use it or might even be free. That removes any maintenance you might have to do, and you always have the latest features. From Microsoft, in general, their most common SaaS offering is Office 365. The app services Azure SQL Server and Azure Active Directory
+
+office 365
+Azure active directory
+
+
+Serverless
+~~~~~~~~~~
+
+Of course, this never means there are no servers involved in the solution. It means that you don't have to manage any servers. You are effectively using someone else's servers to run on.Azure Functions are probably the best known examples of serverless on Azure. It was the first genuine example of serverless on Azure.
+
+
+
+
+---->
+Service is the core of azure.
+
+IaaS provides servers, storage and networking as a service.
+
+PaaS ia a superset of IaaS and also includes middleware, such as database management tools.
+
+SaaS is when a service is built on top of PaaS, like Office 365.
+
+Serverless means that you don't have any servers. Let's a single function be hosted, deployed, run and managed on its own.
+
+
+Azure Marketplace
+------------------>>
+
+Azure Marketplace is an online store that provides access to thousands of IT software applications and services.
+
+it provides))
+
+. Solutions and Services (Large selection from Microsoft and partners. Apps, VMs, templates, Services...)
+. Azure app store
+. Easy to integrate(use from portal, CLI, Powershell. Some are free, some are paid)
+. Publish your own (if you are a microsift partner, pulish your own services in markerplace.)
+
+Benefits::
+. Certified and less Maintenance (less maintenance than creating your own service or application from scratch. All Marketplace offerings are cerified by Microsoft)
+
+. Efficient (Faster to build a prototype of an idea ith ready-made components from the marketplace.)
+
+. New Markets (Market your own solution to new markets and segments. Having you assess application or other servers n the marketplace exposes it to a ton of Azure users.)
+
+. Support (if you have an application listed on the marketplace, you get technical support and design support, as well from Microsoft.)
+
+
+
+
+
+Azure regions::::::
+
+A region is a set of datacenters deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network
+
+* Each region has more than one datacenter
+* Latency is the time it takes data to travel.
+  (latency defined perimeter - datacenters are not too far)
+
+* low latency - Low latency refers to the minimal delay in processing computer data over a network connection. 
+
+
+""" Two or more data centers not too far from each other connected with a fiber connection """
+
+
+
+Ho to choose a Region??????
+
+1) location - Choose a region closet to your users to minimize latency
+
+2) Features - Some features aren't in all regions. If you need a specific feature, some regions might be unavailable.
+
+3) Price - the price of services vary from region to region
+
+
+
+Paired Region!!!
+
+* Each region is paired within same geographic area.
+
+* If the primary region has an outage you can failover to the secondary region.
+
+* Only one region is updated at any one time.
+
+* Some services used paired regions for replication (both will get updated)
+
+
+Availability Zone ////
+
+Within a region and each zone has its own separate power, cooling and networking. Used for protecting data from failures.
+
+
+region(regions are connected 2)
+availability zones (max 3 avilability zones are there)
+data centers (in each availability zones 1 or more data centers will be there)
+
+
+
+Resource Group
+-------------->>>
+
+lets think that resource group is lika a container that holds resources
+
+* resource group is not a resource
+
+* each resource can only exist in a single resource group (simultanously we can put in another RG)
+
+* You can add or remove resources to any RG at any time.
+
+* You can move a resource from one RG to another
+
+* Resources from multiple regions can be in one resource group.
+
+* A RG can be used to manage access control for administrative actions. You can give access to an entire group, including the resources in it.
+
+* resources in one RG can interact with other resources in another RG
+
+* A RG has a location, or region, as it stores meta data about the resources in it.
+
+
+Azure Resource Manager (ARM)
+----------------------------->>>
+
+>>> All interaction with azure resources go through the ARM. It is the main Azure Architecture component for creating, updating and manipulating resources.
+
+. If you interact with any resource on Azure, it goes through the ARM. whether you use the portal, Powershell, Azure CLI.
+
+. Deploying resources from various tools will always result in the same consistent state
+
+. You can define the dependencies between resources, ensuring that any new resources don't step on the toes of the others.
+
+. you can easily decide which users have access to which resources using built-in features in the ARM.
+
+. You can logically organize all your resources using the tag feature. Tagging is assigning a label for each resource you can then sort and perform actions on
+
+. And you can clarify your organization's billing by viewing costs for a group of resources sharing the same tag.
+
+Virtual Machine
+---------------->>>
+
+* IaaS - Manage everything except the hardware. This includes the networking components.
+
+* Tools - Use azure portal to manage large numbers of VMs and even hybrid clouds.
+
+* Compliance - use azure blueprints to make your VMs comply with company guidelines.
+
+* Recommendations - Azure will recommend improvements to ensure better security, higher availability and greater performance.
+
+* Choice - Choose amount of RAM, no.of CPUs, Windowsor Linux.
+
+
+! You don't buy, own, or control the hardwar. Azure does.
+
+! VMs are an IaaS offering, where you control and manage everything on the machine.
+
+! Pricing for VMs go up as you increase RAM and number of CPUs. VMs are priced per hour.
+
+
+Scale sets
+----------->>>
+Scale set ia pool of identical VMs.(IaaS)
+
+Scale sets are identical VMs. They can be activated or deactivated as needed.
+
+* A baseline VM for the scale set ensures application stabilty.
+
+* a baseline VM is nothing but the first VM (we will clone that VM to create more identical VMs)
+
+* As a resource usage inceases, more VMs as activated to take the load.
+
+* You only pay for the VM, storage and networking resources youuse. Nothing additional for scale sets.
+
+
+- Multiple VMs -- Simple to manage multiple identical VMs
+
+- High availability -- If one VM fails or stops, the others in the sacle set will keep working.
+
+- Auto scaling -- based on your demand it will add or remove VMs
+
+- Large scale -- Run up to 1000 VMs in a single scale set
+
+- No extra cost -- No added cost for using scale sets
+
+
+App Services
+------------->>>
+
+App services is an easy way to host and manage your web application.
+
+App services are a PaaS offering on Azure
+
+	App Services is a fully managed platform. This means that servers, nerwork, storage and other fundamental infrastructure ia all handled or managed by Azure.
+
+You have to focus on Business value and logic
+
+
+App Services are three types
+
+1) Web Apps:::  (Web Apps are used to host web sites and web applications)
+
+	. run on both windows and linux
+	. supports a lot languages, such as .NET, Java, Node js, python ,.....
+	. Azure integration for easier deployment
+	. Auto-scaling and load balancing
+
+
+2) Web apps for containers:::   (Web Apps are used to host web sites and web applications)
+
+	. It is used to deploy and run containerized applications in azure
+
+
+3) API app:::   (API apps can host your data backend services and doesn't have a graphical front-end interface like other two app services)
+	API - Application Program Interface
+	. which is an efficient way to connect and expose any data backend that you have
+
+	. no graphical component means no user interface no frontend
+
+	. it is an interface to connect other applications to programmatically
+
+	. Azure API apps lets you host your API application easily. you can use many programming languages
+
+
+
+Container::::
+
+@ all the dependencies for an application are included in the container image
+
+@ Containers don't have any components relating to the OS that require maintenance
+
+@ Applications running in containers can be deployed easily to multiple different OS and hardware platforms.
+
+@ scaling and patching is much simpler
+
+
+```` You develop a software as normal. You go through the various cycles of creating your application. When you are ready to publish it, the application gets wrapped up in a container image, which can then be deployed or published to something like Azure Container Instances, also called ACI.
+
+Azure Container Instances
+-------------------------->>>
+
+
+Azure Container Instances is the primary service on Azure for hosting and running your workloads in a container.
+
+run the application inside of the container, without managing any virtual machines.
+
+
+
+Kubernetes
+----------->>>
+
+Kubernetes is an open-source container orchestration system for automating application deployment, scaling, and management
+
+
+
+'' open source == that means code base is public and anyone can submit fixes, and feature ideas to the product
+
+'' Orchestration == keeps track of lots of parts of a system. Makes sure containers are configured correctly to work together
+
+
+Azure kubernetes service
+------------------------>>>
+
+Azure Kubernetes Service (AKS) is a managed Kubernetes service from Microsoft Azure. It allows users to deploy and manage Kubernetes clusters on the Azure cloud platform. AKS helps developers deploy, manage, and scale containerized applications using Kubernetes.
+
+AKS is used to run multiple containers within a Kubernetes cluster, making it easier to manage and scale containerized applications.
+
+
+Azure Container Registry
+------------------------>>>
+
+Azure Container Registry (ACR) is a cloud-based service for managing and storing Docker container images and related artifacts
+
+when your azure container instances or kubernetes services need to create a new container, the image comes from ACR
+
+If you maintain container images in an Azure container registry, you can easily create a container in Azure Container Instances using the Azure portal.
+
+ex:::
+
+Imagine, for example, you have an application that processes orders from customers.
+
+That application runs inside a container, which is created from an image in ACR.
+
+Azure Kubernetes Services manages the containers and has a cluster.
+
+(A cluster is a set of machines, called nodes, that run containerized applications managed by Kubernetes.)
+
+A pod is a group of one or more containers with shared storage network and a specification for how to run the containers.
+
+Your application for processing orders lives in a pod. When the number of orders increase and the current pod or pods can't keep up, Kubernetes can automatically provision another pod to take some of the load.
+
+Azure Kubernetes Services is a must for managing any kind of container infrastructure on Azure.
+
+see image (AKS.png)
+
+
+Azure Virtual Desktop
+---------------------->>>
+
+Azure Virtual Desktop is a completely virtualized version of Windows, meaning it runs 100% in the cloud.
+
+
+- reuse windows licenses
+
+- multiple users can use the same VM instance to run multiple concurrent sessions
+
+- use windows from anywhere on any device with an internet browser
+
+- we can use azure storage to secure your data
+
+
+
+
+IaaS/PaaS (On a virtual machine.....)
+
+. install your own applications
+. Access to the OS
+. Resource visibility
+. An app service has no OS access, but has resource access
+
+Function....
+
+. Smallest compute service on azure
+. A single functon of compute
+. Called, or invoked, via a standard web address (URL)
+. Runs once and stops
+. It can communicate with other resources in azure
+. only once it will execute
+. A function just does one run and one unit of compute.
+
+
+
+= Function still use a VM to run on but, afterall compute has to be happen somewhere. No need to focus on any maintence and processes.
+
+
+So let's say your FunnyFerret business lets users upload pictures of their critters. These images need processing to both optimize them for web display and storage. When a user uploads an image of their funny ferret through to your website, an Azure function receives that image. The function has just one job to do, which is process the image to compress it and turn it into the correct file format. The function then places the image in a database for future use in your online application.Then the function dies.
+
+
+benifits:
+
+only once will run when needed otherwise no need of runing
+
+only when need of only it will so that money will save
+
+if any reason one time function fails, that doesn't affect with other time function run. only that particular function run only will get affect

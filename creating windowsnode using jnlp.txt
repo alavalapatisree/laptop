@@ -1,0 +1,25 @@
+jnlp-java network launch protocol
+
+
+1.new node
+2.give the path were u want to store the artifacts in the remote windows path in remote root sirectory (ex:C:\Users\windowuser\Downloads\Jenkins)
+3.launch method:launch agent connected to ir controller 
+4Custom WorkDir path:same remote root directory path
+5.save and launch node
+6.as soon as launched the node it will show couple of commands to run in the windows cmd path  (ex:C:\Users\windowuser\Downloads\Jenkins>)
+    curl.exe -sO http://104.42.60.60:8080/jnlpJars/agent.jar
+      java -jar agent.jar -jnlpUrl http://104.42.60.60:8080/computer/window/jenkins-agent.jnlp
+       -secret d2057d8ad5af1f9ff618545c0051b73095ab1f76bfd9447f0ad27760ed74f71a -workDir "C:\Users\windowuser\Downloads\Jenkins"
+7.after running the cmds in the windows cmd path ..then the window node will connect
+
+
+8.but the problem is after closing the cmd prompt in winows then the windows node will disconnect
+to overcome that we need to install exe document(
+   a.browser the window service wrapper --open the github and click on tags 
+  b.click on release and scroll down and install windowsX64.exe
+  c.copy that file in the folder (ex:C:\Users\windowuser\Downloads\Jenkins>) and rename that with jenkins-agent.exe
+  d.create one xml file with jenkins-agent.xml .open the jenkins-agent.xml file and paste the jenkins.xml content which present in the sample folderin
+     github window service wrapper repo
+  e.come to cmd prompt as a admistrator in windows and run the command jenkins-agent.exe install
+  f.search for services in windowss serach bar and we can see jenkins8080 id which is specified as jenkins8080 in xml document
+    g.click on and start the service it will connect without any distractions)

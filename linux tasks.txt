@@ -1,0 +1,211 @@
+Find the largest file in a directory:
+
+
+ls -lh | sort -n | tail -1
+
+
+Find all files in a directory with a specific extension:
+
+
+find . -name "*.txt"
+
+
+Create a new directory:
+
+
+mkdir new_directory
+
+Change the current working directory:
+
+
+cd new_directory
+
+List the contents of a directory:
+
+
+ls
+
+Copy a file:
+
+
+cp file1 file2
+
+Move a file:
+
+
+mv file1 file2
+
+Delete a file:
+
+
+rm file1
+
+Create a new file:
+
+
+touch new_file
+
+Edit a file:
+
+
+vim file1
+
+Search for a string in a file:
+
+
+grep string file1
+
+Replace a string in a file:
+
+
+sed 's/string1/string2/g' file1
+
+Sort a file:
+
+
+sort file1
+
+Reverse the order of a file:
+
+
+tac file1
+
+Count the number of lines in a file:
+
+
+wc -l file1
+
+Find the length of a file:
+
+
+wc -c file1
+
+Check if a file exists:
+
+
+test -f file1
+
+Check if a directory exists:
+
+
+test -d directory1
+
+Create a symbolic link:
+
+
+ln -s file1 file2
+
+Create a hard link:
+
+
+ln file1 file2
+
+Remove a symbolic link:
+
+
+rm -f file1
+
+Remove a hard link:
+
+
+rm -f file1
+
+Mount a filesystem:
+
+
+mount /dev/sdX /mnt
+
+Unmount a filesystem:
+
+
+umount /mnt
+
+Format a filesystem:
+
+
+mkfs.ext4 /dev/sdX
+
+Partition a disk:
+
+
+fdisk /dev/sdX
+
+Create a RAID array:
+
+
+mdadm -C /dev/md0 /dev/sdX /dev/sdY
+
+Start a RAID array:
+
+
+mdadm -A /dev/md0
+
+Stop a RAID array:
+
+
+mdadm -S /dev/md0
+
+Add a disk to a RAID array:
+
+
+mdadm -a /dev/md0 /dev/sdZ
+
+Remove a disk from a RAID array:
+
+
+mdadm -r /dev/md0 /dev/sdZ
+
+Configure a firewall:
+
+
+ufw enable
+
+Configure a router:
+
+
+ip route add 192.168.1.0/24 via 192.168.0.1
+
+Configure a switch:
+
+
+configure switch
+
+Configure a DNS server:
+
+
+vim /etc/resolv.conf
+
+Configure an NTP server:
+
+
+vim /etc/ntp.conf
+
+Configure a DHCP server:
+
+
+vim /etc/dhcpd.conf
+
+Configure a Samba server:
+
+
+vim /etc/samba/smb.conf
+
+Configure an SSH server:
+
+
+vim /etc/ssh/sshd_config
+
+Configure an FTP server:
+
+
+vim /etc/vsftpd/vsftpd.conf
+
+Configure a web server:
+
+
+vim /etc/apache2/conf.d/default.conf
+
+Configure a mail server:
+
+
+vim /etc/postfix/main.cf

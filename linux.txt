@@ -1,0 +1,28 @@
+cd ~
+cd /path/to/directory
+cd ..
+cd -
+cd ~username
+cd /
+ls
+ls -l
+ls -la
+ls -lh
+ls -R
+ls -lR
+ls -lRh
+ls -lt
+ls -lS
+pwd
+cat 1.txt
+cat 1.txt 2.txt
+cat -n 1.txt
+cat -E 1.txt
+cat -T 1.txt
+cat 1.txt 2.txt > a.txt
+touch a.txt
+touch b.txt c.txt d.txt
+touch <existing_file name> (to change timestamp)
+touch -t YYYYMMDDHHMM.SS <file_name>
+cp file.txt home/thor/aaa
+cp -r home/thor/aaa home/thor/bbb

@@ -1,0 +1,73 @@
+Virtual Network (VNet)
+----------------------->>>
+
+. VNet enables Azure resources to securely communicate with each other, the internet, and on-premises networks.
+
+. VNet is virtual (like VM)
+
+
+IP Address::::
+
+. An IP address is a unique numerical identifier for a device or network that connects to the internet. 
+
+. IP stands for "Internet Protocol", which is the set of rules that govern how data is sent over the internet or a local network.
+
+
+Address space::::
+
+. An address space is the range of IP addresses that are avilable
+
+. Every service or resource that is connected to a VNet will get its own unique address on that VNet within the address space.
+(that is how services on the same Vnet can find each other and communicate)
+
+. you assign an address space to the Vnet and the serice or resources automatically gets an Ip address in that address space
+
+
+
+Subnet::::
+
+. Subnets enable you to divide VNet into one or more subnetworks and allocate a portion of the VNet address space to each subnet
+
+. by doing thus we can have multiple networks on the same VNet
+
+uses of subnet)))
+
+* we can group some of resources (may be they are related to a particular project) onto same subnet to mate it easier to keep an overview
+
+* if IP adress range is small, it is easy to allocate address to resources
+
+* we can secure individual subnets using a network secuiry group
+
+
+Subnet Regions& Subscriptions ::::
+
+. A VNet belongs to a single region. Every resource on the Vnet must be in the same region too.
+
+. A VNet belongs to just one subscription, but a subscription can have multiple VNets.
+
+Advantages of VNet
+::::::::::::::::::::
+
+* Scaling:: If you want to add more address in your address space, you can do it. Vnet will support it
+	    If you want to create a new VNet it is also easy.
+
+
+* High availability:: by using peering Vnets, load balancer, VPN gateway we can increase the availability of resources
+
+* Isolation ::we can isolate services and products very efficiently and simply with VNets. Using subnets and network security groups you can manage and organize your resources within a VNet
+
+
+VNet peering::::
+
+That allows you to connect two or more VNets together in the same Azure region or across different Azure regions.
+
+. Traffic between VMs in Peering uses private microsoft network and never passes through the public internet, just like if the VMs were on the same VNet
+
+
+peering benefits)))
+
+. Low-latency, high bandwidth connection   between resources in different virtual networks.
+
+. Resources in separate VNets can communicate
+
+. Transfer data easily between subscriptions and deployment in separate regions

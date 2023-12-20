@@ -1,0 +1,66 @@
+Switch -
+* A switch is a hardware component in a network that connects devices together. 
+* It allows multiple devices to share a network while preventing each device's traffic from interfering with other devices' traffic.
+
+
+By using ip link command we can see the interfaces of devices
+
+(the term "interfaces" refers to the points of interaction or connections that enable communication and data exchange between devices or between a device and its users.)
+(No, the term "point of interaction" does not specifically refer to an IP address. In the context of devices, a "point of interaction" generally refers to a location or 
+mechanism where interaction occurs, and it can encompass various aspects, such as physical interfaces, user interfaces, or even software interfaces.) 
+
+-> Imagine a USB port on your computer. It's a physical interface that lets you connect a USB device, like a flash drive. The port serves as a bridge for the computer and the flash drive to share data.
+
+1) For two devices to communicate with each other directly, they should be on the same network. 
+2) To be in same network, we need to connect them to a switch (this is only one case, we have another options also)
+3) After they are connected to a switch, we will get a IP address for that network by DHCP(Dynamic Host Configuration Protocol). For devices also we will get IP address. 
+If we want to assign with ourslef, we will use static (manually assigned) IP addresses. 
+
+** ip addr add <IP_ADDRESS>/<SUBNET_MASK> dev <INTERFACE_NAME>
+ip addr add 192.168.1.10/24 dev eth0
+-> command to assign a static IP address to a network interface
+
+4) Now devices can commuincate with each other, we can check by using ping command.
+** ping <IP_ADDRESS>
+5) Switch can only enable communication within same network.
+
+
+How does a system in one network can communicate with other system in other network ???
+
+-> A router is a networking device that is commonly used to connect two or more different networks together
+To a router 2 networks are assigned, then the router will have 2 different IP addresses. If there are three, then it will get 3 IP addresses.
+
+By using router we are connected 2 different networks. In one network we have stsyem A,B and in other network we have system C,D..
+Now I want to system B to communicate with system C. but the router won't know where to forward the packets.
+
+
+How does a system in one network can communicate with other system in other network ???
+1) first we need to connect both networks to a router.
+2) we need to update the routing table, so that router will know where to send the packets.
+3) If you do't update the table, the router may either drop the packet or attempt to forward it along a path that doesn't lead to Network B.
+4) To see those routing configuarion use route command.
+
+* route
+-> to see the routing table
+
+
+5) we have 2 types to add configurations to routing table - Static Routing - Dynamic Routing
+6) ip route add is used to manually add a static route to the routing table on a Unix-like operating system. 
+
+* ip route add [destination_network_or_host] via [router_ip_address]
+-> destination_network_or_host - IP address of network B    ----- network IP
+-> router_ip_address - when we are saying to a router if 2 networks conneted then the router will have 2 IP address. In that we need to give Network A router IP address   ---- router IP
+
+7) router address od network A (router_ip_address) is called gateway 
+8) run route command to see the table again.
+9) so by this we can send from system B to system C, but if you need to send from system C to B, again we need to update routing table
+
+* ip route add [destination_network_or_host] via [router_ip_address]
+-> destination_network_or_host - IP address of network A    ----- network IP
+-> router_ip_address - when we are saying to a router if 2 networks conneted then the router will have 2 IP address. In that we need to give Network B router IP address   ---- router IP
+
+10) If you want to access internet also we need to update in routing table with ip route add
+
+* ip route add default via <ip address>
+* ip route add 0.0.0.0/0 via <ip address>  (both same)
+-> if you given this in routing table, that, means for that routing ip any destinaion network was not then it will send the packet to the router's interface within its own network.

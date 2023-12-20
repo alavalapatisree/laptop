@@ -1,0 +1,624 @@
+                                BASIC LINUX COMMANDS 
+ 
+1.	du –display the disk usage of files and directories 
+•	du  -h   -- to see the disk usage in human-readable format 
+8.0K    ./swathi 
+4.0K    ./.cache/starship 
+8.0K    ./.cache 
+8.0K    ./.ssh 8.0K    ./.config 48K     . 
+•	du  -s  <specific deirectory>-- to see the specific data usage 
+ ex. 8       swathi • du  -a  --- Displays the disk usage of individual files in a directory. 
+4       ./.bashrc 
+4       ./.profile 
+4       ./.bash_profile 
+4       ./swathi/hi.txt 
+8       ./swathi 
+4       ./.cache/starship 
+0       ./.cache/motd.legal-displayed 
+8       ./.cache 
+4       ./.ssh/authorized_keys 
+8       ./.ssh 
+4       ./.config/starship.toml 8       ./.config 48      . 
+•	du –k – display the disk usage in kilobytes 
+•	du –m  -- display the usage in megabyte 
+•	du –c – at last we can see the the total disk usage 
+•	du –sh <directory> -- we can see the specific directory usage in human readable format  
+2.	df – to display the information about available and used disk space on the file system 
+•	df –h  
+•	df –h <path to directory> 
+3.	mount –used to attach(mount) filesystems or storage devices to specific directory in the file system 
+mount  <filesystem>  <desired directory/mount point> ex: mount /dev/vdb   /mnt/data 
+4.	unmount – used to deattached mounted device on specified directory. unmount <mountpoint> 
+    5.ping –used to test the connectivity between the servers. 
+             Ex : ping <server name> # ping google.com 
+             Ping  -c 5 google.com - Specifies the number of ICMP packets to send before stopping. 
+              	Ping –i 3 google.com --	    Sets the time interval between each packet.
+ 6.ssh—to secure and encrypted connection with a remote devices/server  
+ ssh server name@<ip address> 
+   ssh -p port_number  username@remotehost 
+ssh -L local_port:target_host:target_port username@remote_host – 	local port 
+forwarding	 
+ssh -R remote_port:target_host:target_port username@remote_host	 – remote 
+port forwarding	 
+ssh-keygen –t rsa	  - to generate a ssh-keypair 
+ssh-copy-id username@ipaddress(remote server username,ip address)	 – to copy 
+the public key to remote server	 
+ssh -o ServerAliveInterval=60 username@hostname	 –to set the time to the 
+server to be alive.(in seconds)	 
+ 
+7. scp –to securely copy the files between hosts scp C:\path\to\id_rsa.pub username@remote_host:~/temp_id_rsa.pub ssh username@remote_host "cat ~/temp_id_rsa.pub >> ~/.ssh/authorized_keys && rm ~/temp_id_rsa.pub" 
+scp –r username@ipaddress:path to copy  path to store – 	remote to local 
+scp –r path to copy  username@ipaddress:path to store –	local to remote
+ 
+to generate the keypair in windows we need puTTy terminal to transfer files from windows to linux we need winscp client 
+ 
+8.rsync – used for copying,syncing and transferring files and directories  
+rsync -av source-path destination-path	-to copy the files from one location to 
+another on same machine	 
+    -a -archive , -v -verbose(showing what files are being transferred) --delete  delete the files in the destination that are not present in the source 
+rsync -av -e “ssh -i ~/.ssh/(path-to-private)” source-path 
+username@ipaddress:destination-path – to copying directories or files from local machine to a remote sever over ssh 
+9.curl -used to transferring data with url’s .it supports HTTP,HTTPS,FTP and 
+API’s ans services	 
+ Curl [option] [url] 
+curl https://www.example.com
+ -to fetch the html content of the url and display 
+is in the terminal	  
+curl -o <desiredname> <url>	 - to save the output (-o) as s file
+curl -X POST -d "param1=value1&param2=value2" 
+https://api.example.com/endpoint - this send the post request with form data to the specific URL 
+	• 
+ 	- X, --request	: Specifies the request method (GET, POST, PUT, etc.). 
+	• 	-H, --header: Includes additional HTTP headers in the request. 
+	• 	-d, --data: Sends data in a POST request. 
+	• 
+• 	-o, --output: Saves the output to a file. 
+		-L, --location	: Follows redirects. 
++ 
+10.wget – used to  retrieving files from the web.it functions similarly to ‘curl’   wget [option] [url] 
+wget -o <desired-name> <url>	 - to save the output (-o) of the file
+ vi url.txt  
+https://www.example.com/file1.zip https://www.example.com/file2.zip https://www.example.com/file3.zip 
+wget -i url.txt	 – to run the multiple url listed in a file
+wget -c <url>	 - to continue downloading a partially downloaded file.
+11.ftp: it is used to transfer the files over the internet (file transfer protocol) 
+Before connecting to the ftp server 
+1.First we need to install the ftp server “	sudo apt-get update, sudo apt-get install 
+vsftpd” 
+2. open configuration files 	sudo nano /etc/vsftpd.conf
+3. changes 	write_enable=YES        # Allows uploading to the server
+local_enable=YES        # Permits local users to log in chroot_local_user=YES   # Restricts users to their home directory 
+4.restart the service ‘	sudo service vsftpd restart’
+ 
+sudo adduser ftpuser	  # Replace "ftpuser" with your desired username
+  
+  
+12.sftp – 
+ 
+13.telnet -it is a network protocol used for communicate with remote server 
+over tcp /ip network	 
+telnet [hostname/ip sddress]   telnet -l username hostname 
+telnet hostname portnumber	[8080] – by default telnet uses port 23 ,otherwise 
+we need to specify port number	 
+Telnet communication is unencrypted, meaning data (including passwords) is sent in clear
+text. Due to its lack of security, it's recommended to use more secure alternatives like SSH 
+(Secure Shell) for remote connections, as SSH encrypts the data sent between devices.	 
+ 14.nslookup – to see the ip address or dns name  retrive  the related 
+information of DNS-server or querying the dns server	 
+nslookup [ip address]	 – to find out the domain name
+nslookup [domain.name]	 -to find out the ip address
+ 15.dig – similar to nslookup ,used for querying dns server. 
+ (Domain Information Groper) 
+ Dig [domain name] /[ip address] 
+16.netstat – to display all active network connection  netstat -lntp  
+netstat -r	 – to display only routing table
+to install the net-tools “	sudo apt install net-tools”
+17.ifconfig – interface configuration of network  
+Ifconfig	 – shows the information about active network interface and 
+configuration	 
+Ifconfig	 is similar 	to ip ,ip addr show
+ip link set dev eth0 up 
+18.route –  
+Ip route show default	 – to see the default route address
+route	 – to see the kernel ip  routing tables
+19.iptables – 	iptables	 is like a gatekeeper for your computer's network traffic. It 
+allows you to control and manage how data (packets) can go in and out of your
+computer. You can decide which packets can enter or leave, where they're	 
+allowed to go, and what they can do.	 	
+apt install iptables 
+iptables –L	 –list of inbound and outbound connections
+-A – add rule (INPUT/OUTPUT) 
+-p –protocol(tcp) 
+-D – delete 
+--dport – destination port (5432) 
+-j –action(ACCEP/DROP) 
+-I – insert the rule top of the chain 
+-s –source ip  
+-d –destination ip 
+ 
+20.hostname –hostname is unique to identify 
+Hostname	 – to display hostname ‘in linux the hostname will be in configuration 
+file /etc/hostname	   
+Hostname <new-hostname>	  - to change the host name
+21.date – to display the current time and date  
+Date  
+Date mmddhh[cc]yyyy.s[optional]	 – to set the date to the server
+22.timedatectl --- to display the current date and time which uses the systemd 
+servers	 
+Timedatectl 
+ 23.uname –(unix name) to display the system information uname 
+uname -r	 -to display the release
+uname -v	 – to display the version with time and date when it is created
+uname -n	 – to see the system hostname
+uname -p/i/m	 – to see hardware
+24.whoami –to display the current user name 
+25.id – display user id ,group id and group 
+26.sudo -It allows a permitted user to execute a command as the superuser or 
+another user, as specified by the security policy.	 
+sudo su	 – to switch into another user(by default is is root user)
+sudo su username	 = to switch into specifief user
+sudo apt update	 – to update the package
+ 
+27.su – to switch to one user to another user 
+28.passwd -to change the password of current user 
+Passwd 
+Passwd usename	 – to change the password of specific user name
+echo "new_password" | passwd --stdin username	 -within single line
+29.useradd – to create new user account  useradd [options] username  option  
+-u = user id  
+-g = group id 
+-G =group 
+-m =to set home directory to user 
+-s = shell 
+-e	=expiry date 
+-p= password 
+-f	= custom configuration file 
+30.userdel – to delete user account userdel username 
+ 1))
+cd ~ - This command changes the current directory to your home directory. The tilde (~) is a shorthand notation for the home directory of the current user.
+cd /path/to/directory
+cd ..
+cd -  -> This command switches back to the previous directory you were in before the last cd command. 
+cd ~username
+cd / -This command changes the current directory to the root directory, which is the top-level directory in the file system hierarchy.
+
+2))
+ls
+ls -l
+ls -la   -> Lists all files and directories, including hidden ones (those starting with a dot). In long format.
+ls -lh   -> Lists in long format with human-readable file sizes (e.g., "2.5M" instead of bytes).
+ls -R    -> Lists files and directories recursively, showing the contents of subdirectories as well.
+ls -lR   -> Lists files and directories recursively in long format.
+ls -lRh  
+ls -lt   -> Lists files and directories, sorting by modification time, with the most recently modified files first.
+ls -lS   -> Lists files and directories in long format, sorting by file size in descending order (largest files first).
+
+3))
+pwd
+
+4))
+cat 1.txt
+cat 1.txt 2.txt
+cat -n 1.txt
+cat -E 1.txt   -> Displays the contents of "1.txt" with a dollar sign ($) at the end of each line to indicate the end of lines.
+cat -T 1.txt   -> Displays the contents of "1.txt" with tabs (^I) represented as ^I in the output.
+cat 1.txt 2.txt > a.txt
+
+5))
+touch a.txt
+touch b.txt c.txt d.txt
+touch <existing_file name> (to change timestamp)
+touch -t YYYYMMDDHHMM.SS <file_name>
+
+6))
+cp file.txt home/thor/aaa
+cp -r home/thor/aaa home/thor/bbb
+cp -a 1.txt aaa/ (to preserve timestamps, permissions, file content)
+cp -i 1.txt aaa/ (interactive session to get conformation for overwrite)
+cp -v k.txt 8030/ (show us the details of copying files)
+cp -f 1.txt /aaa   (forceful)
+cp a.txt b.txt c.txt aaa/
+
+7))
+mv <source> <destination>
+mv 1.txt rupa/
+mv 1.txt 2.txt
+mv 1.txt rupa/two.txt
+mv 8030/ 1631/
+mv -i sree.txt 1631/
+mv -f sree.txt 1631/
+mv -v 1.txt 1631/
+
+8))
+rm file.txt
+rm a.txt b.txt
+rm -r 8030/
+rm -i a.txt
+rm -f b.txt
+rm -v c.txt
+
+9))
+mkdir dir1
+mkdir dir1 dir2 dir3
+mkdir -p dir5/dir6
+mkdir -m 755 dir7
+
+10))
+rmdir dir1
+rmdir dir2 dir3 dir4
+rmdir -p dir5/dir6 (path to thr empty folder) (enter path will be deleted)
+
+11)
+cut -c 1-4 2.txt   			-> Cuts and displays characters 1 to 4 from each line of the "2.txt" file.
+cut -f 1,3,4 a.txt  			-> Cuts and displays fields 1, 3, and 4 from each line of the "a.txt" file. Fields are separated by tabs by default. If you have a different delimiter, you 					   can specify it using the -d option.
+cut -d'@' -f1,3 a.txt  			-> Cuts and displays fields 1 and 3 from each line of the "a.txt" file, using the "@" character as the field delimiter.
+echo 'this is jhon' | cut -d'n' -f1	-> Cuts and displays the first field (before the "n" character) from the input text "this is jhon."
+
+12))
+gzip file.txt  (otput - file.txt.gz)
+gzip file.txt one.gz
+gzip file1.txt file2.txt file3.txt (compressing multiple files -- output -- file1.txt.gz file2.txt.gz file3.txt.gz)
+
+13))
+gunzip one.gz
+gzip -d one.gz
+gunzip file1.txt.gz file2.txt.gz file3.txt.gz
+gzip -d file1.txt.gz file2.txt.gz file3.txt.gz
+gunzip -c example.txt.gz  (to see the content without decompressing the file)
+
+14))
+tar czf rupa.tar.gz file1.txt file2.txt file3.txt
+tar xzf rupa.tar.gz
+tar -czf compressed_folder.tar.gz /path/to/folder
+
+15))
+find <directory> <options> <pattern type>
+find aaa/ -name 1.txt
+find aaa/ -iname rupa.txt
+find aaa/ -name "*.txt"
+find aaa/ -type f
+find aaa/ -type d
+find aaa/ -type f -size +1M
+find aaa/ -type f -size -100k
+find aaa/ -user <username>
+find aaa/ -perm u=rw (exact read and write)
+find aaa/ -perm /u=rw (atleast read and write)
+find aaa/ -type f -exec echo {} \;
+find aaa/ -type f -exec rm {} \;
+find aaa/ -maxdepth 1 -type f
+find aaa/ -maxdepth 2 -type f
+find aaa/ -mtime -9 (modified within last 9 days)
+find aaa/ -mtime 9 (modified exactly 9 days ago)
+
+16))
+grep "pattern" file.txt (Search for a specific pattern in a file:)
+grep "pattern" file1.txt file2.txt (Search for a pattern in multiple files:)
+grep "pattern" /path/to/directory/* ( Search for a pattern in all files in a directory:)
+grep -i "pattern" file.txt (Case-insensitive search:)
+grep -n "pattern" file.txt (Display line numbers of matching lines:)
+grep -o "pattern" file.txt (Display only the matching part of the line:)
+grep -r "pattern" /path/to/directory/ (Search for a pattern in all subdirectories:)
+grep -v "pattern" file.txt (Invert the match (show lines that do not match):)
+grep -c "pattern" file.txt (Count the number of matching lines:)
+grep "pattern" *.txt (Search for a pattern in a specific file type (e.g., all .txt files):)
+grep -I "pattern" * (Search for a pattern, ignoring binary files:)
+
+17))
+head example.txt
+head -n 20 data.csv
+head -c 50 binary.dat (o display the first 50 bytes of a binary file named "binary.dat":)
+head -v file1.txt file2.txt  ---> displays 10 lines of each file
+
+18))
+tail example.log
+tail -n 20 data.txt
+tail -c 50 binary.dat
+tail -f access.log    -> -f: The -f option, also known as "follow" or "continuous" mode, makes tail monitor the file for updates. As new lines are added to the file, they are automatically 				 displayed in the terminal.
+tail -v file1.txt file2.txt
+
+19))
+sort file.txt   -> Sorts the lines in the "file.txt" in ascending order (alphabetically).
+100
+20
+3
+50
+9
+
+
+100
+20
+3
+50
+9
+
+sort -r numbers.txt   -> orts the lines in the "numbers.txt" file in reverse order (descending order).
+sort -n scores.txt    -> Sorts the lines in the "scores.txt" file in ascending numeric order (numerically).
+100
+20
+3
+50
+9
+
+3
+9
+20
+50
+100
+
+sort -rf file.txt (case insensitive)   -> orts the lines in the "file.txt" file in ascending order (alphabetically), but in a case-insensitive manner.
+sort -u sorted.txt (removing duplicate and sorting)  -> Sorts the lines in the "sorted.txt" file in ascending order (alphabetically) and removes duplicate lines.
+
+20))
+uniq sorted.txt    ->  Displays only the unique lines from the "sorted.txt" file, removing duplicate lines.
+uniq -d sorted.txt -> Displays only the duplicate lines from the "sorted.txt" file, omitting the unique lines.
+uniq -c sorted.txt (To display only the unique lines and their counts from a sorted file) -> It shows how many times each unique line appears in the file.
+
+21))
+wc document.txt    -> Counts the number of lines, words, and characters in the "document.txt" file and displays the result.
+wc -l file.txt	   -> Counts only the number of lines in the "file.txt" file and displays the result.
+wc -w poem.txt	   -> Counts only the number of words in the "poem.txt" file and displays the result.
+wc -m poem.txt	   -> Counts the number of characters (bytes) in the "poem.txt" file and displays the result.
+wc -c binary.dat   -> Counts the number of bytes (characters) in the "binary.dat" file. This is typically used for binary files.
+cat data.txt | wc  -> Uses a pipe to first concatenate the contents of "data.txt" using cat and then counts the lines, words, and characters in the concatenated output using wc.
+
+22)
+diff -u file1.txt file2.txt
+diff -r dir1 dir2
+diff -q config_old.txt config_new.txt  -> The diff command with the -q option is used to compare two text files and report whether they are different. If the files are identical, it will produce 					  no output. 
+diff -y script1.sh script2.sh 	       -> The diff command with the -y option is used to compare two text files side by side, displaying the differences between them in a side-by-side format. 
+
+23)
+whatis
+
+24))
+chmod u+rw,go+r example.txt
+chmod ug+x myscript.sh
+chmod 711 myscript.sh
+chmod go-w data
+chmod -R u+rw project           ->Recursively grants read and write permissions to the owner for all files and directories under the "project" directory. This operation is applied recursively to 				  all subdirectories and files within "project."
+
+25))
+chown new_owner: file.txt 			-> Change the owner of a file or directory
+chown new_owner:new_group file.txt 		-> Change the owner and group of a file or directory
+chown -R new_owner:new_group directory/ 	-> Change the owner and group recursively for a directory and its contents
+chown 1001:1002 file.txt 			-> Change the owner of a file or directory using the user's numerical UID and GID
+chown :new_group file.txt 			-> Preserve the owner of a file when only changing the group
+chown --reference=reference_file target_file 	-> Change the owner and group of a file using a reference file
+sudo chown $(whoami) file.txt  			-> The command sudo chown $(whoami) file.txt is used to change the ownership of the "file.txt" to the currently logged-in user. 
+
+26))
+chgrp new_group file.txt 			-> Change the group ownership of a file or directory
+chgrp -R new_group directory/ 			-> Change the group ownership recursively for a directory and its contents
+chgrp :new_group file.txt 			-> Preserve the owner when changing the group (use a colon : to specify only the group)
+chgrp --reference=reference_file target_file 	-> Change the group ownership of a file using a reference file
+sudo chgrp user_group file.txt 			-> Change the group ownership to the group of another user (useful for administrators with sudo privileges)
+
+27))
+ps 			-> ist all processes running in the current terminal session
+ps -u <username> 	-> ps -u command is used to list the processes running on a Unix or Unix-like operating system for a specific user.
+ps -l 			-> The ps -l command provides a long format list of all processes running on the system. 
+ps aux 			-> Provides an extensive list of information about all processes, including user, PID, CPU usage, memory usage, terminal, command, and more. It shows processes from all 			   users.
+ps -p <ID>  		-> List processes with a specific process ID
+
+
+28))
+top - top is an interactive and dynamic command-line utility for monitoring system resource usage and viewing information about running processes in real-time on Linux systems.
+Press "P" to sort the list of processes by CPU usage.
+Press "M" to sort the list of processes by memory usage.
+Press "k" to kill a selected process.
+Press "u" to filter processes by a specific user.
+Press "f" to customize the fields and columns displayed.
+Press "R" to renice (change process priority) a selected process.
+Press "q" to quit top.
+
+29))
+awk is a versatile and powerful text processing and pattern scanning language and utility in Unix-like operating systems.
+
+awk '{print $1, $3}' 1.txt 				-> Print specific fields of a file
+awk '$3 > 50 {print $1, $3}' 1.txt 			-> Filter lines based on a condition
+awk '{sum += $2} END {print "sum :", sum} 1.txt 	-> Calculate and print the sum of a column
+awk '/Bob/ {print}' 1.txt 				-> Search for a specific pattern and print matching lines
+awk 'tolower($0) ~ /bob/ {print}' 1.txt 		-> To perform a case-insensitive search with awk, you can use the tolower function to convert the text to lowercase before comparing it with 							   the pattern.
+awk 'toupper($0) ~ /bob/ {print}' 1.txt			-> To perform a case-insensitive search with awk, you can use the tolower function to convert the text to uppercase before comparing it with 							   the pattern.
+
+
+30))
+sed 's/old/new/g' 1.txt 				-> Replace all occurrences of "old" with "new" in a file and print the result to the standard output
+sed 's/old//g' 1.txt 					-> just to remove all iccurances
+sed -i 's/old/new/g' 1.txt 				-> modify and save in 1.txt
+sed -n '5,10p' 1.txt 					-> Print lines 5 to 10 of a file
+sed '/pattern/d' 1.txt 					-> Delete lines containing a specific pattern
+sed '/^[[:space:]]*$/d' input.txt > output.txt 		-> to delete spaces between lines
+1.last :  display the information about the users on the system 
+last -n 10  ---> displays last 10 logins 
+last -i  ---> displays ip addresses associated with the logins
+last -F  ---> displays full information like hostname and ip address of the logins
+last -R  ---> displays hostname in a log file in a reverse order particularly to know about the recent logins.
+last -t <YYYYMMDDHHMMSS> ---> Show logins that occurred after the specified date and time. You need to provide the date and time in the format YYYYMMDDHHMMSS
+
+
+*** A file system is a method for storing and organizing data on a computer
+
+
+2.history    -  display command history
+history n --->display last n commands ex: history 4
+history -c ---> clear entire command history 
+history -w ---> for writing current command history to the ~/.bash_history file.
+history -d <offset> ---> delete specific command from the history ex : -d 5
+Ex: history | head 4  ---> to see first 4 commands in the history
+history -s <string>  ---> Add the specified string to the end of the history list without executing it. 
+This can be useful for adding comments or notes to your history.
+
+
+3.echo  — Print a message to the terminal
+
+
+4.lshw – displays hardware information
+lshw -short ---> Displays a shorter, more concise summary of hardware information.
+lshw -c cpu ---> To display information only about the CPU
+lshw -c memory ---> To display information about the memory (RAM).
+lshw -c storage ---> To display information about storage devices (hard drives, SSDs, etc.)
+lshw -c network ---> To display information about network interfaces.
+
+5. lspci — Displays information about PCI buses and devices.
+
+6.lsusb — Displays information about USB buses and devices.
+
+7.hwinfo — Displays detailed hardware information.
+
+8.lscpu  - displays information about cpu
+
+9. free — Displays memory usage.
+free -h or free --human ---> Displays memory usage statistics in a human-readable format, 
+with units in megabytes and gigabytes.
+free -m ---> Shows memory usage statistics in megabytes.
+Free -g ---> Displays memory usage statistics in gigabytes.
+Free –l ---> displays low level memory usage
+
+10. vmstat ---> Displays system memory, processor, and I/O statistics.
+11. uptime ---> Displays system uptime and load averages.
+The system's uptime, which indicates how long the system has been running since its last reboot.
+uptime –p ---> Displays the system's uptime in a more human-readable format, showing the time in years, months, days, hours, and minutes.
+
+12.systemctl : It is the primary tool for controlling and managing system services and units in systems that use systemd as their init system
+[init system is the first process that starts when a Linux operating system boots and is responsible for initializing the system, launching services, and managing the system's runtime environment.]
+[Systemd is an init system and service manager for Linux operating systems. It serves as the first process that is executed when the Linux kernel boots and is responsible for initializing the system, managing system services, and supervising processes.]
+systemctl show service-name ---> to see the information about particular service
+systemctl list-units ---> This command displays a list of all active units (services, sockets, timers, etc.)
+systemctl list-units --all  ---> This command lists all loaded units, including those that are inactive.
+systemctl list-units --type=service ---> This command lists only service units, providing a focused view of services.
+systemctl status service-name ---> to see the status of the service
+systemctl start service-name
+systemctl stop service-name
+systemctl restart service-name
+systemctl reload service-name ---> 
+This command instructs the service to reload its configuration without stopping it. This is useful for services that support dynamic configuration changes.
+systemctl enable service-name ---> This command configures a service to start automatically at system boot
+systemctl disable service-name ---> 
+This command prevents a service from starting automatically at system boot.
+
+13.locate - used to quickly and efficiently search for files and directories on your system.
+locate -i <filename> ---> to ignore case sensitive
+locate -l 5 <filename> ---> to limit the search upto 5 or 6 
+locate -r <~data> ---> To use regular expressions to find all files and directories that start with "data" followed by any characters
+
+14.Kill: This command is used to terminate processes manually. This command basically, will send a signal that terminates it.
+kill CONT 0000 ---> resume a stopped process
+kill stop 0000 ---> stop a process
+kill TERM 0000 ---> termination
+kill KILL 0000 ---> forcefull termination
+kill INT 0000 ---> interrupt
+
+
+15.ps aux ---> to list all the processes
+
+16.Htop --> is a powerfull tool for monitoring system performance, managing processes and diagnosing issues in realtime.
+htop -p RES ---> we can sort by memory usage
+htop -u username ---> processses runned by specific use
+
+17.ln ---> creating extra names for a file or directory.
+ln <original file> <target file> ---> to create a hard links between two files (if original file changes it will effect target file too)
+ln -s <original file> <target file> ---> to create symbolic links bbetween two files
+
+18.cal ---> Display a calendar
+cal [options] [month] [year]
+cal -3 -y ---> To show a three-column calendar for the whole year, you can use
+cal 4 2023  ---> To show the calendar for a specific month and year (e.g., April 2023), you can specify the month and year
+
+
+19.tee — Redirect output to multiple files
+ls -lh | tee <filename >
+echo "message" | tee -a <filename> ---> to redirect and append that message to that file.
+
+
+20.zip ---> to compress the files with .zip extension
+zip <zipname to save> < filename > 
+
+21.unzip ---> to unzip compressed files.
+
+22.at --> to shedule one task
+at -l ---> to list all scheduled at time tasks to run
+at -d <job number> ---> particula job to delete
+at -m ---> send email to user when job has been executed 
+at -f script_file.txt TIME   --->  Read the command to be executed from a file. This is useful for specifying a script to run at a later time.
+
+23.less --->  allows you to view text files and navigate through their content
+less 1.txt 2.txt ---> to view multiple files sequently :n for next file :p for previous file
+
+24.groupadd ---> used to create a new group on the system
+
+sudo groupadd -g 1001 mygroup
+sudo chown :myproject /path/to/directory
+to give the group "myproject" read and write permissions on a directory and its contents, you can use the "chown" 
+sudo groupadd -f mygroup ---> if a group already exists with this name to create a group forcefully
+
+25.getent group ---> to see all the groups/users present in system
+getent group | grep my_group  [cat /etc/group]
+getent passwd ---> to see the all the users [cat /etc/passwd]
+
+
+26.watch ----> that allows you to periodically execute a given command and display its output in real-time
+watch -n 1 date
+watch -n 10 'tail -n 10 /var/log/syslog' ---> to see last 10 commands including recently added commands too
+-d ---> to see the differences between two different logs
+
+26.tar ---> to compress a file or directory into tar archieve
+tar -cvf file.tar path
+
+27.dmesg ---> used to display the kernel ring buffer messages. These messages provide information about the kernel's operation, hardware detection, and various system events.These messages can be useful for diagnosing hardware issues, understanding system boot processes, and troubleshooting various system problems.
+  
+ 
+ The usermod command in Linux is used to modify user account properties. It allows administrators to make changes to an existing user account, such as modifying the user's username, primary group, home directory, shell, and more.
+
+Here are some common usages of the usermod command:
+
+Syntax:
+
+usermod [options] USERNAME
+Common Options:
+Change Username (-l/--login NEW_LOGIN):
+
+
+sudo usermod -l new_username old_username
+This changes the username from old_username to new_username.
+
+Change User ID (-u/--uid UID):
+
+
+sudo usermod -u new_uid username
+This changes the UID (user ID) of the user to the specified new_uid.
+
+Add User to a Supplementary Group (-aG/--append GROUP):
+
+
+sudo usermod -aG groupname username
+This adds the user to a supplementary group (additional group).
+
+Change User's Home Directory (-d/--home NEW_HOME):
+
+
+sudo usermod -d /path/to/new_home -m username
+This changes the user's home directory and moves the content from the old directory to the new one (-m flag).
+
+Change User's Login Shell (-s/--shell SHELL):
+
+
+sudo usermod -s /path/to/new_shell username
+This changes the user's default login shell.
+
+Lock/Unlock User Account (-L/-U):
+
+
+sudo usermod -L username
+This locks the user account (disables login).
+
+
+sudo usermod -U username
+This unlocks the previously locked user account.
+
+Expire User Account (-e/--expiredate EXPIRE_DATE):
+
+sudo usermod -e YYYY-MM-DD username
+This sets the expiration date for the user account.
+
+Remember to use sudo or run the usermod command with root privileges (sudo) as modifying user accounts typically requires administrative rights. Always exercise caution when making changes to user accounts as incorrect usage of usermod can impact user access or system functionality.

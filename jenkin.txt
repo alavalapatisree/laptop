@@ -1,0 +1,38 @@
+install needed plugins:
+
+pipeline
+nodeJS
+
+Tools Configuration:
+NodeJS
+
+new item- pipeline
+
+
+pipeline {
+    agent any
+    
+    tools {
+        nodejs 'node'
+    }
+
+    stages {
+        stage('Git - Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/alavalapatisree/FoodOrder.git/'
+            }
+        }
+        stage('install') {
+            steps {
+                sh 'npm cache clean --force'
+                sh 'npm install'
+            }
+        }
+        stage('build'){
+            steps{
+                sh 'npm run build'
+            }
+        }
+    }
+}
+

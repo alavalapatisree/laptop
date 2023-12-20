@@ -1,0 +1,28 @@
+
+Hi everyone I am Rupasree. I have completed my Mtech in the stream of structural Engineering in 2023. After that I was joined in Actualize on july 3rd as a Associate Azure Devops Engineer. 
+
+The term "DevOps" was new to me when I joined, and I began my learning journey with theories related to software development, such as SDLC and Agile Methodology. Understanding SDLC gave me a clearer picture of the software development process.
+
+In general terms we can say Devops is like a kitchen where we can have muliple tools to make so many recipes. Based on recipe we can use tools what ever we want. 
+
+I realized that DevOps is not a single tool or not only a methodology but a combination of various tools, acting as a bridge between developers and operations teams. I have gained knowledge in technologies like Git, Linux, Shell script, Python, Jenkins, and Docker. In the future, I plan to focus on Kubernetes, Terraform, and Ansible.
+
+Under the guidance of Mansoor sir, I have been tasked with understanding the complete software development process and creating a Docker image for a developed web application. Additionally, I have learned about Azure Cloud and the Azure DevOps portal, exploring IaaS, PaaS, and SaaS services in Azure Cloud and features like boards, repo, pipeline, test, and artifact in Azure DevOps Portal.
+
+I am currently preparing for the AZ-900 certification exam, which I plan to take later this month, along with that we got task from Rahul sir from atlascopco regarding creating a pipeline and nodes in Jenkins. This is the progress of mine since I was joined here. Thank you.
+
+
+Git is a version control system that allows developers to track changes in their code. GitHub is a web-based hosting service for Git repositories. 
+
+By using git we can store code by versions. As a responsible team mate we need to maintain the code properly. coming to devops perspective we need to know about because we are part of team and we need to use those git repos while creating pipelines for complete CI/CD. so as a devops engineers we need to know how to use git.
+Centralized workflow invloves commiting to main branch without using other branches.
+
+Feature flow we will create branches for features and devlopers will commit to changes to their feature branch.
+
+Git flow is strict flow for complex projects. we can use multiple branches for release schedules.
+
+By using cloud we can reduce the cost of infrastructure. For faster recovery or backup of data cloud is the best way. By one click we can increase or decrease the instances. After a successful development of software we need to deploy in server in either on-premises or cloud. For that knowing cloud is mandatory for a DevOps engineer.
+
+Azure Devops portal is feature of Azure. We can manage our code, work progress, pipeline, testing, and storing artifacts in one spot. In Azure Devops we can integrate with many tools.
+
+Linux is open source OS.Linux is stable and reliable.It is more secure than other OS based on our configurations. For better security and integration with devops tools we must know about linux and it's commands.

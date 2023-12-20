@@ -1,0 +1,23 @@
+USING CREDENTIALS
+
+    1. ssh USENAME AND PRIVATE KEY 
+a.new node
+b.creating a ssh username and private key credential (username-see the "id" or "whoami" cmd in vm that is the username)
+c.first generate the key pairs(ssh-keygen -t rsa)
+d.go to .ssh directory 
+e.list of .ssh directory( authorized_keys,id_rsa,id_rsa.pub) with known hosts file verification strategy
+f.copy the public key and add into (vi authorized_keys)
+g.copy the private key and paste it in the credential configure
+
+  2.Username and Password
+a.new node
+b.creating username and password credentials(before that create user and password in our vm)
+c.in remote root directory give the valid path which means where we want to store regarding to jenkins information or to store artifacts(create one directory in our vm and 
+give permissions(chmod 777 <directoryname> chown jenkins:jenkins <directoryname>)
+d.create one .ssh directory inside /var/lib/jenkins 
+e.create one known_hosts and append the inforemation of(ssh-keyscan -H hostname) ex:ssh-keyscan -H vm >> /.ssh/known_hosts
+
+
+DIFFERENCE BETWEEN KEYGEN AND KEYSCAN:
+ssh-keygen -t rsa ---generates SSH key pairs for authentication purposes.
+ssh-keyscan -H hostname--- retrieves and displays the public SSH key of a specified host, useful for adding keys to the known_hosts file for secure connections.

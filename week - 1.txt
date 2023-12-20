@@ -1,0 +1,260 @@
+what is clold???????????
+
+cloud is just really a platform that you can have on-demand availability and delivery of virtual IT resources that you need for your personal use or your business use.
+
+cloud Types??????
+
+Private cloud : which is for organizations operating on a private network.
+
+Public cloud : This is owned by a provider like Amazon or Google or even Microsoft. And they provide a cloud computing infrastructure for individuals like ourselves or businesses.
+
+Hybrid cloud : this is just a combination of both private and public cloud offering.
+
+Why do we use cloud???????
+
+. speed the market
+. high availability of resources
+. unlimited storage
+. very easy to use
+. less money
+
+
+Private cloud providers...... RedHat, Dell, VMWare....
+Public cloud providers....... AWS, Azure, GCP
+
+PaaS
+----->
+
+Platform as a service
+
+PaaS is a service that offers a complete development and deployment environment in the cloud.
+
+SaaS
+----->
+
+Softwate as a service
+
+SaaS is a way of deliverong applications or software over the internet to the end user as a service.
+ex: ZOOM
+
+
+IaaS
+----->
+
+Infrastructure as a service
+
+A form of cloud computing that provides virtualized computing services over the internet.
+ex: aws, gcp, azure
+
+
+FaaS
+----->
+
+Function as a service
+
+FaaS ia a cloud computing service that allows you to execute code in response to events.
+FaaS is a serverless
+
+
+
+What is server??????????
+
+server is a computer or device that provides programmable service to another computer or its user.
+
+types of server???
+. web server ( Nginx, Apache)
+. file server (Windows file server, network attached storage)
+. database server (MySQL, PostgreSQL)
+. email server
+. DNS server
+. Application server
+
+What is serverless???
+
+serverless ia a cloud computing execution model in which the cloud provider allocates machine resources on demand.
+
+serverless computing allows you to focus on writing code to perform specific tasks, while the cloud service provider handles the infrastructure, resource allocation, and event-driven execution of your functions.
+
+
+Advantages of cloud???????
+
+. Fault tolerance  --- Fault tolerance is the ability of a system to continue operating without interruption when one or more of its components fail.
+	. Redundancy --- duplication or backing up of data stored in the cloud. 
+	. Resiliency --- the ability of a cloud system to recover from setbacks and continue operating normally.
+. High availability
+. Scalability --- the ability to increase or decrease IT resources as needed to meet changing demand
+. Elasticity --- the ability of a cloud to automatically expand or compress the infrastructural resources on a sudden up and down in the requirement so that the workload can be managed 		 efficiently
+
+Region
+------->
+
+regions are geographic locations where Microsoft Azure operates data centers.
+
+Availability zones
+------------------->
+
+Availability zones are physical locations within a region that are designed to be highly resilient to power outages, network failures, and natural disasters. 
+
+Each availability zone is made up of one or more data centers that have independent power, cooling, and networking.
+
+Azure Resource Manager (ARM)
+----------------------------->
+
+. Azure Resource Manager (ARM) is a free Azure service that allows you to deploy, manage, and monitor Azure resources.
+. It provides a management layer that lets you create, update, and delete resources in your Azure account.
+
+
+Resource Hierarchy and Organization
+------------------------------------>
+
+azure tenent
+subscriptions
+resource group
+resource
+
+WHO - CAN DO WHAT - ON WHICH RESOURSES
+Identity and Access Management
+________________________________>
+Identity and access management (IAM) in Azure is a role-based access control system that allows IT to control user access to critical information. 
+
+
+Azure Active Directory: (WHO)
+
+Azure Active Directory (Azure AD) is a cloud-based identity and access management service from Microsoft.
+
+Azure Active Directory contains the identities that we use to authenticate and prove who we are is who we say we are, that we will then use to assign various roles and permissions.
+
+Azure Role Based Access Control: (CAN DO WHAT)
+
+With Azure Role-Based Access Control, we are able to provide different types or different levels of access to different resources in our Azure environment.
+
+
+Scope :
+
+scope determines "on which resources" our identities have different levels of access to.
+
+
+
+
+
+Azure Monitor
+-------------->
+
+Azure Monitor is a tool that collects and analyzes data about Azure resources and the infrastructure they run on.
+
+Azure Monitor collects data from various sources, including:
+. Logs and metrics from the Azure platform and resources
+. Custom applications
+. Agents running on virtual machines
+
+
+
+Logs:
+
+/ text based record of events
+
+. Activity logs : "who created the resource and when"
+. OS logs : "why is windows is giving an error"
+
+Metrics:
+
+/ numerical based(may be graphs, charts...)
+it is a measure of performance of our different resources
+
+. CPU utilization
+. website traffic
+
+
+
+
+
+VIRTUAL MACHINE
+~~~~~~~~~~~~~~~~>
+
+. A virtual machine (VM) is a digital version of a physical computer.
+Advantages:
+. availability sets (Availability sets in Azure are logical groupings of virtual machines (VMs). 			They allow Azure to understand how an application is built to provide 				redundancy and availability.)
+ = VM replication
+ = Replicate VM for better fault tolerance
+ = If a VM goes down, a copied VM can take over
+. scale sets  (Azure Virtual Machine Scale Sets (VMSS) are a way to create and manage a group of 		identical virtual machines (VMs).)
+ = A scale set is often paired with a load balancer in which you can have multiple copies of virtual machines, which enables you to scale up or down your application based on user demand.
+
+ = scaling copies of application
+ = enables scaling, and elasticty
+
+VIRTUAL NETWORK (Vnet)
+~~~~~~~~~~~~~~~~~~~~~~~>
+
+A VNet allows Azure resources, such as virtual machines (VMs), to securely communicate with each other.
+
+Provides private and public network communication among azure resources.
+
+
+STORAGE ACCOUNTS
+~~~~~~~~~~~~~~~~~>
+An Azure storage account is a container that groups all of your Azure Storage data services together. 
+storage accounts contains all of your Azure Storage data objects: blobs, files, queues, and tables
+
+. blob(object)
+. files
+. Disks
+. Queues
+. Tables
+
+Blob (Binary Large Object)
+- Blob stands for Binary Large Object. Azure Blob allows users to store large amounts of unstructured data. Blobs are collections of data that can include files, images, audio, video, and other types of unstructured data.
+
+Files
+
+- File Storage is designed for storing structured data in the form of files and directories.
+- Azure File Storage simplifies file sharing and data storage in the cloud, making it easy to migrate and manage data across your cloud infrastructure.
+
+Disks
+
+-Azure Disk Storage is a cloud storage solution from Microsoft Azure. It provides high-performance, durable, and scalable storage for workloads such as virtual machines, databases, and business-critical applications. 
+
+Queue
+
+- Azure Queue Storage is a service that stores large numbers of messages. Messages can be up to 64 KB in size and can be accessed from anywhere in the world using HTTP or HTTPS
+
+Tables
+
+- NoSQL database storage
+- Gradually trasitioning to Cosmos DB
+
+
+DATABASE
+~~~~~~~~~~>
+"database" refers to a cloud-based data storage and management service that allows you to store, organize, and retrieve data
+
+ANALYTICS
+~~~~~~~~~~>
+
+"analytics" refers to the process of collecting, processing, and gaining insights from data using various services and tools provided by Microsoft's cloud platform. 
+
+
+
+APP SERVICE
+~~~~~~~~~~~~>
+
+Azure App Service is a cloud service that allows developers to build and deploy mobile and web apps. It's a Platform as a Service (PaaS) offering, which means that Azure manages everything except the business application and its data. This means that developers don't have to worry about managing the network or infrastructure.
+
+
+Scaling out )) Horizontal scaling (opposite scaling in)
+
+- adding new resources to a system, such as servers, to increase performance and storage capacity.
+
+Scaling up )) Vertical scaling  (opposite scaling down)
+
+- scaling up involves increasing the capacity of existing resources.
+
+
+
+Business Agility  (page 12)
+
+tenent and azure active directory both are same
+
+Azure Active Directory (Azure AD): Think of this as a tool that helps organizations manage who can access their computer systems and applications. It's like a bouncer at a club, checking your ID before you can come in.
+
+Tenant: Imagine it as a separate box that contains all the information about the people and rules for one specific organization. Each organization gets its own box, and they can control who's allowed in and what they're allowed to do inside that box.
