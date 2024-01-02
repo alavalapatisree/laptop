@@ -35,6 +35,7 @@ git checkout –b <branch name>  to create  new branch and switch to that bra
 git checkout <branch name>  switch branch
 git branch <branch name>  creates a new branch
 git branch   to see all the branches
+git push origin --delete <remote branch name>  is used to delete a branch from the remote repository named origin in Git.
 git fetch origin master  to update the origin master branch in our local repo
 retrieving changes of remote repo to local repo.
 git merge origin/master  merging changes of one branch to another
